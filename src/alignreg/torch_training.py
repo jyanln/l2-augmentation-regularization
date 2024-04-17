@@ -82,7 +82,7 @@ def torch_train(train_loader,
 
 
             reg = torch_maxsql2(model, images, aug_images, loss_fn, label, l2_lambda)
-            loss_val = torch.add(loss_val, reg.item())
+            loss_val = torch.add(loss_val, reg)
             loss_val.backward()
             optimizer.step()
 
